@@ -2,17 +2,21 @@
 
 use Illuminate\Support\Facades\Route;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
-
 Route::get('/', function () {
-    return view('welcome');
+    return 'Hallo Pak';
+});
+Route::get('/rumus-segitiga/{alas}/{tinggi}', function ($alas, $tinggi) {
+    $luas = $alas * $tinggi;
+    return 'Alasnya :'.$alas. "<br>"
+    .'Tingginya : ' . $tinggi;
+});
+Route::get('/codeigniter', function () {
+    return 'Hallo codeigniter';
+});
+Route::get('/nama-saya-adalah-{nama?}', function ($nama = 'Wajib diisi') {
+    return 'Nama Saya Adalah : '.$nama;
+});
+Route::get('/nama-framework/{nama}/{tahun}', function ($nama, $tahun) {
+    return 'Nama Framework yang digunakan adalah : '.$nama ."<br>". 
+    "Tahun Rilis : ".$tahun;
 });
