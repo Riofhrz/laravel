@@ -39,3 +39,7 @@ Route::get('data-siswi' ,[datasiswaController::class, 'datasiswi']);
 Route::get('nama' ,[datasiswaController::class, 'nama']);
 
 Route::resource('user', UserController::class);
+
+Route::get('profile', function () {
+    return view('profile.index');
+});
